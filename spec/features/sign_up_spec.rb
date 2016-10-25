@@ -31,7 +31,14 @@ feature 'Sign up' do
     visit '/'
     fill_in :email, with: 'test@test.com'
     click_button 'Submit'
-    expect(page).to(have_content("You've already signed up with that email"))
+    expect(page).to(have_content("There was a problem with registering your email, please try again"))
+  end
+
+  scenario 'checks email adress is valid format' do
+    visit '/'
+    fill_in :email, with: 'test'
+    click_button 'Submit'
+    expect(page).to(have_content("There was a problem with registering your email, please try again"))
   end
 
 end

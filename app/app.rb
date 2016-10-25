@@ -17,7 +17,7 @@ class Peachio < Sinatra::Base
     if @lead.save
       erb :thanks
     else
-      flash.keep[:errors] = "You've already signed up with that email"
+      flash.now[:errors] = "There was a problem with registering your email, please try again"
     end
   end
 
