@@ -1,12 +1,13 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require 'dm-validations'
 
 class Lead
 
   include DataMapper::Resource
 
   property :id, Serial
-  property :email, String
+  property :email, String, :unique => true
 
 end
 
