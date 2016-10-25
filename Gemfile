@@ -7,8 +7,10 @@ ruby '2.3.1'
 # gem "rails"
 
 gem "sinatra"
+gem 'sinatra-flash'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+
 
 group :development, :test do
   gem "rspec"

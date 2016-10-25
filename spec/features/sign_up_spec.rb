@@ -24,5 +24,14 @@ feature 'Sign up' do
     click_button 'Submit'
     expect(page).to(have_content("Thank you!"))
   end
+  scenario 'emails must be unique' do
+    visit '/'
+    fill_in :email, with: 'test@test.com'
+    click_button 'Submit'
+    visit '/'
+    fill_in :email, with: 'test@test.com'
+    click_button 'Submit'
+    expect(page).to(have_content("You've already signed up with that email"))
+  end
 
 end
