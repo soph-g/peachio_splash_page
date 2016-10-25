@@ -13,12 +13,13 @@ class Peachio < Sinatra::Base
     erb :'leads/new'
   end
 
-  post '/leads' do
+  post '/' do
     lead = Lead.new(email: params[:email])
     if lead.save
       erb :'leads/index'
     else
-      flash.now[:errors] = "There was a problem with registering your email, please try again"
+      flash.now[:notice] = "There was a problem with registering your email, please try again"
+      erb :'leads/new'
     end
   end
 
