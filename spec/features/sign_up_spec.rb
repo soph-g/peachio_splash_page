@@ -3,7 +3,7 @@ feature 'Sign up' do
   scenario 'visting the landing page' do
     visit '/'
     within 'h1' do
-      expect(page).to(have_content("Hello Peachio!"))
+      expect(page).to(have_content("Welcome to Peachio!"))
     end
 
   end
