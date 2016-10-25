@@ -1,20 +1,32 @@
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<!DOCTYPE HTML>
+<html class='html-class'>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script>
+       $(document).ready(function() {
+         $("h1").click(function () {
+           $("h1").hide();
+         });
+       });
+     </script>
+  </head>
 
 
-<body>
-  <div class="container">
-    <h1>Welcome to Peachio!</h1>
-    <h2>Crowd-source the best beauty products for you</h2>
-    <h3>Leave your email address to be the first to know the latest Peachio news</h3>
+  <body>
+    <div class="container">
+      <h1>Welcome to Peachio!</h1>
+      <h2>Crowd-source the best beauty products for you</h2>
+      <h3>Leave your email address to be the first to know the latest Peachio news</h3>
 
-    <form action="/" method="POST">
-      <label for="email">Email:
-        <input type="text" name="email" />
-      </label>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-</body>
+      <form action="/" method="POST">
+        <label for="email">Email:
+          <input type="text" name="email" />
+        </label>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+
+</html>
