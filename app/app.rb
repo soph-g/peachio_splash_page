@@ -18,7 +18,7 @@ class Peachio < Sinatra::Base
     if lead.save
       erb :'leads/index'
     else
-      flash.now[:notice] = "There was a problem with registering your email, please try again"
+      flash.now[:errors] = lead.errors.full_messages
       erb :'leads/new'
     end
   end

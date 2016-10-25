@@ -8,9 +8,11 @@
     <h1>Welcome to Peachio!</h1>
     <h2>Crowd-source the best beauty products for you</h2>
     <%= yield %>
-    <% if flash[:notice] %>
-      <div id="notice">
-        <%= flash[:notice] %>
+    <% if flash[:errors] && !flash[:errors].empty? %>
+      <div id="error">
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
       </div>
     <% end %>
   </div>
