@@ -1,19 +1,29 @@
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<!DOCTYPE HTML>
+<html class='html-class'>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='./js/imageGenerator.js'></script>
+  </head>
 
-<body>
-  <div class="container">
-    <h1>Welcome to Peachio!</h1>
-    <h2>Crowd-source the best beauty products for you</h2>
-    <%= yield %>
-    <% if flash[:errors] && !flash[:errors].empty? %>
-      <div id="error">
-        <% flash[:errors].each do |error| %>
-          <%= error %>
+  <body>
+    <div class="container">
+       <div class='conainer2'>
+        <h1>Welcome to Peachio!</h1>
+        <h2>Crowd-source the best beauty products for you</h2>
+        <%= yield %>
+        <% if flash[:errors] && !flash[:errors].empty? %>
+          <div id="error">
+            <% flash[:errors].each do |error| %>
+              <%= error %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
-</body>
+    </div>
+  </body>
+
+</html>
