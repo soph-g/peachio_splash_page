@@ -9,20 +9,19 @@
     <script src='./js/imageGenerator.js'></script>
   </head>
 
-
   <body>
     <div class="container">
        <div class='conainer2'>
         <h1>Welcome to Peachio!</h1>
         <h2>Crowd-source the best beauty products for you</h2>
-        <h3>Leave your email address to be the first to know the latest Peachio news</h3>
-
-        <form id='email-form' action="/" method="POST">
-          <label for="email">Email:
-            <input type="text" name="email" />
-          </label>
-          <input type="submit" value="Submit">
-        </form>
+        <%= yield %>
+        <% if flash[:errors] && !flash[:errors].empty? %>
+          <div id="error">
+            <% flash[:errors].each do |error| %>
+              <%= error %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </body>

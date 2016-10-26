@@ -10,6 +10,7 @@ gem "sinatra"
 gem 'sinatra-flash'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'rake'
 
 
 group :development, :test do

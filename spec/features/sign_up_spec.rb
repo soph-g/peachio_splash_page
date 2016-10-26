@@ -3,7 +3,7 @@ feature 'Sign up' do
   scenario 'visting the landing page' do
     visit '/'
     within 'h1' do
-      expect(page).to(have_content("Hello Peachio!"))
+      expect(page).to(have_content("Welcome to Peachio!"))
     end
 
   end
@@ -24,6 +24,14 @@ feature 'Sign up' do
     click_button 'Submit'
     expect(page).to(have_content("Thank you!"))
   end
+
+  scenario 'email field cannot be blank' do
+    visit '/'
+    click_button 'Submit'
+    expect(page).to(have_content("Email must not be blank"))
+  end
+
+
   scenario 'emails must be unique' do
     visit '/'
     fill_in :email, with: 'test@test.com'
@@ -31,14 +39,14 @@ feature 'Sign up' do
     visit '/'
     fill_in :email, with: 'test@test.com'
     click_button 'Submit'
-    expect(page).to(have_content("There was a problem with registering your email, please try again"))
+    expect(page).to(have_content("Email is already taken"))
   end
 
   scenario 'checks email adress is valid format' do
     visit '/'
     fill_in :email, with: 'test'
     click_button 'Submit'
-    expect(page).to(have_content("There was a problem with registering your email, please try again"))
+    expect(page).to(have_content("Email has an invalid format"))
   end
 
 end
