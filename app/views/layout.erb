@@ -11,9 +11,7 @@
 
   <body>
     <div class="container">
-       <div class='conainer2'>
-        <h1>Welcome to Peachio!</h1>
-        <h2>Crowd-source the best beauty products for you</h2>
+      <div class='text-container'>
         <%= yield %>
         <% if flash[:errors] && !flash[:errors].empty? %>
           <div id="error">
