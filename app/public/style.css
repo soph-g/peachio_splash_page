@@ -22,18 +22,6 @@ body {
   align-items: center;
 }
 
-h1{
-  text-align: center;
-}
-
-h2{
-  text-align: center;
-}
-
-h3{
-  text-align: center;
-}
-
-form{
+h1, h2, h3, form{
   text-align: center;
 }
